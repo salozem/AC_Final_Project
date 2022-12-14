@@ -1,24 +1,25 @@
-# RouteWiseApp TF
+# RouteWiseApp
+*Final project of the Algorithmic Complexity course.*
 
-## Instalación de anadonda
+##  Anadonda installation
 
-La recomendación es instalar miniconda descargando desde
-[aquí](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe)
-e instalar con opciones por defecto
+The recommendation is to install miniconda by downloading from
+[here](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe)
+and install with default options
 
-Si ya tiene instalado Anaconda, o prefiere usar Anaconda (versión más grande)
-descargue de
-[aquí](https://repo.anaconda.com/archive/Anaconda3-2021.05-Windows-x86_64.exe) e
-instalar con opciones por defecto.
+If you already have Anaconda installed, or prefer to use Anaconda (larger version)
+download from
+[here](https://repo.anaconda.com/archive/Anaconda3-2021.05-Windows-x86_64.exe) and
+install with default options.
 
-## Crear un entorno virtual
+## Create a virtual environment
 
-Cremos entorno virtual para alojar las dependencias de flask. Si usa anaconda
-puede usar el explorador gráfico. A continuación mostramos los pasos para
-instalar usando línea de comandos:
+We create virtual environment to host the flask dependencies. If you use anaconda
+you can use the graphical explorer. Here are the steps to
+install using command line:
 
-Primero abrimos `Anaconda Prompt` o `Anaconda Prompt (miniconda3)` y ejecutamos
-los siguientes comandos:
+First we open `Anaconda Prompt` or `Anaconda Prompt (miniconda3)` and we execute
+the following commands:
 
 ```shell
 conda update --all
@@ -30,8 +31,8 @@ python -m pip install -U pip
 python -m pip install Flask
 ```
 
-Luego con nuestro editor o IDE de python favorito creamos un archivo llamado
-`hello.py` y escribimos el siguiente programa:
+Then with our favorite python editor or IDE we create a file called `hello.py` and write the following program: `hello.py`.
+`hello.py` and write the following program:
 
 ```python
 from flask import Flask
@@ -43,37 +44,39 @@ def hello_world():
     return "<p>Hello, World!</p>"
 ```
 
-Grabamos el archivo en una carpeta de nuestra elección y luego, desde la línea
-de comandos previamente abierta, nos dirigimos a dicha carpeta usando el comando
-`cd`, por ejemplo `cd "c:\Users\AkiraToriyama\Mis Documentos\tf"`, si su carpeta
-está en un disco distinto, primero ponga el nombre del disco y luego el comando
-cd, por ejemplo `d:` y luego `cd d:\carpetita\carpetota\tf`.
+We save the file in a folder of our choice and then, from the previously opened command line, we go to that folder using the command
+previously opened command line, we go to that folder using the command
+cd`, for example `cd "c:\UsersAkiraToriyama\My Documents"`, if your folder
+is on a different disk, first enter the disk name and then the command `cd`, e.g. `d:`d:`.
+cd, for example `d:` and then `cd d:\test\test2\tf`.
 
-Finalmente ponga el siguiente comando:
+Finally put the following command:
 
 ```shell
 set FLASK_APP=hello.py
 python -m flask run
 ```
 
-## Setup actualizado
+## Updated Setup
 
-El [venv](https://docs.python.org/3/library/venv.html) módulo admite la creación de "entornos virtuales" livianos, cada uno con su propio conjunto independiente de paquetes de Python instalados en sus site directorios. Se recomienda el uso de entornos virtuales para proyectos de desarrollo de software que, por lo general, se derivan de un solo script de Python, y Python proporciona múltiples formas de crear y usar un entorno virtual.
+The [venv](https://docs.python.org/3/library/venv.html) module supports the creation of lightweight "virtual environments", each with its own independent set of Python packages installed in its site directories. Virtual environments are recommended for software development projects that are usually derived from a single Python script, and Python provides multiple ways to create and use a virtual environment.
 
-Para usar venv en su terminal ejecute los siguientes comandos
+To use venv on your terminal run the following commands
 
 ```shell
 py -m venv env
 ```
-### Activar el entorno virtual
-
+### Activate venv
+```shell
 .\env\Scripts\activate
+```
 
-### Mira la lista de paquetes instalados en el entorno virtual
-
+### See the list of packages installed in the virtual environment
+```shell
 pip list
+```
 
-### Descargar las dependencias necesarias
+### Download the necessary dependencies
 
 ```shell
 py -m pip install --upgrade pip
@@ -81,7 +84,7 @@ pip install Flask
 pip install perlin-noise  
 ```
 
-### Setup para correr una aplicacion web usando Flask y Python3
+### Setup to run a web application using Flask and Python3
 
 ```shell
 cd "Your project path"
@@ -91,20 +94,21 @@ set FLASK_DEBUG=1
 flask run
 ```
 
-Comando para cambiar de puerto de ejecución
+Command to change run port
+```shell
 python -m flask run -p 5000
-Ahora, le aparecera una URL con una IP local y un puerto, porjemplo
-`http://127.0.0.1:5000`, copie y pegue esa URL en su navegador favorito.
+```
 
-## Nota Importante
+Now, you will get a URL with a local IP and a port, for example
+`http://127.0.0.1:5000`, copy and paste that URL into your favorite browser.
 
-Por ahora puede colocar su algoritmo, según se explicó en clase, en la función
-peru1 de algorithm.py. Debe desempaquetar el archivo d.json.zip directamente en
-la carpeta static/data y ejecutar la aplicación de manera normal, pero con:
+## Important Note
+
+For now you can place your algorithm, as explained in class, in the function
+peru1 function of algorithm.py. You must unpack the d.json.zip file directly into the static/data folder and run the application in the normal way, but with
+the static/data folder and run the application as normal, but with:
 
 ```shell
 set FLASK_APP=tfapp.py
 python -m flask run
 ```
-
-:D
